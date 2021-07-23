@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * tree_size - size of binary tree
  * @tree: pointer to tree
@@ -9,45 +8,45 @@
  */
 size_t tree_size(const binary_tree_t *tree, size_t *level, size_t *deep)
 {
-    if (tree->right != NULL)
-    {
-        if (*level >= *deep)
-            *deep += 1;
-         *level += 1;
-        tree_size(tree->right, level, deep);s
-    }
+	if (tree->right != NULL)
+	{
+		if (*level >= *deep)
+			*deep += 1;
+		*level += 1;
+		tree_size(tree->right, level, deep);
+	}
 
-    if (tree->left != NULL)
-    {
-        if (*level >= *deep)
-            *deep += 1;
-         *level += 1;
-        tree_size(tree->left, level, deep);
-    }
+	if (tree->left != NULL)
+	{
+		if (*level >= *deep)
+			*deep += 1;
+		*level += 1;
+		tree_size(tree->left, level, deep);
+	}
 
-    if (tree->left == NULL && tree->right == NULL)
-        return ((*level - 1));
+	if (tree->left == NULL && tree->right == NULL)
+		return ((*level - 1));
 
-    return (0);
+	return (0);
 
 }
 
 /**
  *  binary_tree_size - deletes an entire binary tree
  *  @tree:  pointer to a parent node
- *  Return - none
+ *  Return: NULL.
  */
- size_t binary_tree_size(const binary_tree_t *tree)
- {
-    size_t *deep = NULL, *level = NULL, deep_t = 1, level_t = 1;
-    deep = &deep_t;
-    level = &level_t;
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	size_t *deep = NULL, *level = NULL, deep_t = 1, level_t = 1;
 
+	deep = &deep_t;
+	level = &level_t;
 
-    tree_size(tree, level, deep);
+	tree_size(tree, level, deep);
 
-    return (deep_t);
- }
+	return (deep_t);
+}
 
 /**
  * binary_tree_leaves -  counts the leaves in a binary tree
@@ -78,15 +77,14 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
 */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-    size_t  leaves = 0, size = 0;
+	size_t  leaves = 0, size = 0;
 
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    size = binary_tree_size(tree);
-    leaves = binary_tree_leaves(tree);
+	size = binary_tree_size(tree);
+	leaves = binary_tree_leaves(tree);
 
-    return (size - leaves);
+	return (size - leaves);
 
 }
-
