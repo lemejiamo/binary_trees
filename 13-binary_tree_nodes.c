@@ -14,7 +14,7 @@ size_t tree_size(const binary_tree_t *tree, size_t *level, size_t *deep)
         if (*level >= *deep)
             *deep += 1;
          *level += 1;
-        tree_size(tree->right, level, deep);
+        tree_size(tree->right, level, deep);s
     }
 
     if (tree->left != NULL)
