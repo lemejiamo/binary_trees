@@ -1,8 +1,9 @@
 #include "binary_trees.h"
 /**
- *  binary_tree_delete - deletes an entire binary tree
- *  @tree:  pointer to a parent node
- *  Return - none
+ * binary_tree_postorder - binary tree using a post-order path.
+ * @tree: pointer to a parent node
+ * @func: pointer to the desired function
+ * Return: NULL
  */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
