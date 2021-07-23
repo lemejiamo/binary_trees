@@ -1,8 +1,9 @@
 #include "binary_trees.h"
 /**
- *  binary_tree_delete - deletes an entire binary tree
- *  @tree:  pointer to a parent node
- *  Return - none
+ * binary_tree_inorder - route in order
+ * @tree: pointer to a parent node
+ * @func: pointer pointer to the desired function
+ * Return - none
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
